@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Example</title>
+    <style>
+        /* Styling for popup container */
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        /* Popup box */
+        .popup-box {
+            background: url(./CodeChefBadge.png) no-repeat center center/cover;
+            width: 400px;
+            height: 250px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 0 1px  rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 1px;
+
+            right: 1px;
+            background:transparent;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        /* Show the popup */
+        .popup-container.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Popup Structure -->
+    <div class="popup-container" id="popup">
+        <div class="popup-box">
+            <button class="close-btn" onclick="closePopup()">X</button>
+            <p style="font-size: 30px;">Welcome to the <br> <span style="font-size: 27px;">SNAppERS</span> <br> 🛍️</p>
+        </div>
+    </div>
+
+    <script>
+        // Show popup when page loads
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById("popup").classList.add("show");
+            }, 500); // Delay to make it smoother
+        };
+
+        // Close popup
+        function closePopup() {
+            document.getElementById("popup").classList.remove("show");
+        } 
+    </script>
+    <nav>
+        <div class="navTop">
+            <div class="naveItem">
+                <img src="./T1.jpg" alt="Content not loaded">
+            </div>
+            <div class="navItem">
+                <div class="search">
+                    <input type="text" placeholder="Searh your type here" class="searchInput">
+                       <img src="./Search_Icon.png" width="15px" height="12px" alt="content not loaded"></div>
+                </div>
+                 <div>
+                    <span class="LimitedOffer">Limited Offer</span>
+                <img src="./T2.jpg" alt="Content not loaded">
+            </div>
+            <div class="navItem">
+                <img src="./T3.jpg" alt="Content not loaded">
+            </div>
+        </div>
+        <div class="navBottom"></div>
+     </nav>
+
+</body>
+</html>
